@@ -12,14 +12,29 @@ from sklearn.tree import DecisionTreeClassifier
 from heapq import nlargest
 import string
 from definations import *
+import pickle
+from flask import Flask, render_template, request
 
+with open('model.pkl', 'rb') as f:
+    cv_loaded, clf_loaded = pickle.load(f)
 
-#********************************************************************Input*********************************************************************************
-# Choice menu and choice and text input from user
-intro()
-choice = int(input("Enter choice 1 or 2"))
+app = Flask(__name__)
 
-test_data = input("Enter the text")
+@app.route("/", methods=["GET", "POST"])
+def home():
+    if request.method == "POST":
+        text = request.form["text"]
+        if text:
+            # Transform the input text using the loaded CountVectorizer
+            text_transformed = cv_loaded.transform([text]).toarray()
+            # Predict using the loaded classifier
+            prediction = clf_loaded.predict(text_transformed)
+            result = "Hatred" if prediction == 0 else "Offensive" if prediction == 1 else "Neutral"
+            return render_template('index.html', prediction=result)
+    return render_template('index.html', prediction=None)
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 #************************************************************Offensiveness and sentiment analysis***********************************************************
