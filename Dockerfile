@@ -1,7 +1,8 @@
-FROM python:3.7
-COPY . /app.py , ./definations.py , ./twitter_data
+FROM python:3.9
 WORKDIR /app
+COPY . .
 RUN pip install -r requirements.txt
-RUN app.py
-EXPOSE $PORT
+EXPOSE 5000
+CMD ["python", "app.py"]
+
 
