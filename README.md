@@ -49,7 +49,7 @@
     <h2>User Interface</h2>
     <div class="image-container">
       <img src="static/homePage.png" alt="User Interface">
-    </div>
+    </div> <br/> <br/>
     <div class="image-container">
       <img src="static/popup.png" alt="User Interface with Popup">
     </div>
