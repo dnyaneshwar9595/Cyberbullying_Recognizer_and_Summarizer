@@ -8,16 +8,9 @@
 4. [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 5. [Docker](https://www.docker.com/)
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyberbullying Detection Project</title>
-</head>
-<body>
-  <h1>Cyberbullying Detection Project</h1>
 
+
+<body>
   <div class="section">
     <h2>Introduction</h2>
     <p>
@@ -80,7 +73,7 @@
 
   <div class="section">
     <h2>Contributors</h2>
-    <p>[Your Name]: Project Lead and Developer</p>
+    <p>[Dnyaneshwar Khaire]: Project Lead and Developer</p>
   </div>
 
   <div class="section">
