@@ -14,27 +14,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cyberbullying Detection Project</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    h1, h2, p {
-      margin-bottom: 20px;
-    }
-    .section {
-      margin-bottom: 40px;
-    }
-    .image-container {
-      margin-bottom: 20px;
-    }
-    .image-container img {
-      display: block;
-      max-width: 100%;
-      margin-bottom: 10px;
-    }
-  </style>
 </head>
 <body>
   <h1>Cyberbullying Detection Project</h1>
