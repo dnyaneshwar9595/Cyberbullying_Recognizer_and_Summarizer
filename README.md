@@ -5,26 +5,117 @@
 1. [Github Account](https://github.com)
 2. [VSCodeIDE](https://code.visualstudio.com/)
 3. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
+4. [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+5. [Docker](https://www.docker.com/)
 
-### Project Introdcuction 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyberbullying Detection Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2, p {
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+    }
+    .image-container img {
+      display: block;
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cyberbullying Detection Project</h1>
 
-1. Cyberbullying is the act of using digital technology to harass, humiliate, or threaten someone. This can take many forms, including mean or threatening messages, spreading false information or rumors, or posting hurtful images or videos online.
+  <div class="section">
+    <h2>Introduction</h2>
+    <p>
+      This project aims to address the prevalent issue of cyberbullying, which has become a significant concern globally, including in India, as reported by the National Crime Records Bureau (NCRB). Research indicates that individuals tend to reconsider their actions when made aware of their offensive behavior, with a success rate of up to 90%.
+    </p>
+    <p>
+      To tackle this problem, this project focuses on developing a solution that can detect offensive text and prompt users with a popup notification, providing them with the opportunity to reconsider their actions.
+    </p>
+  </div>
 
-2. Cyberbullying is important because it can have serious and lasting effects on its victims. Because the internet is easily accessible and often anonymous, it can be easier for bullies to engage in this behavior and harder for victims to escape it. Cyberbullying can lead to feelings of anxiety, depression, and low self-esteem, and in extreme cases, it can even lead to suicide.
+  <div class="section">
+    <h2>Project Overview</h2>
+    <h3>Module 1: Data Extraction, Transformation, and Loading (ETL)</h3>
+    <ul>
+      <li>Extraction: Data is obtained from Kaggle, focusing on datasets related to cyberbullying.</li>
+      <li>Transformation: Data is processed and transformed into a suitable format, leveraging Python and libraries such as Pandas.</li>
+      <li>Loading: Transformed data is loaded into Pandas DataFrames for further processing.</li>
+      <li>Exploratory Data Analysis (EDA): Descriptive statistics are employed to assess the suitability of the dataset for addressing the problem statement.</li>
+      <li>NLP Model Creation: Utilizing Spacy, a Natural Language Processing (NLP) model is developed to detect offensive text.</li>
+    </ul>
+    <h3>Module 2: Machine Learning Models for Detection</h3>
+    <ul>
+      <li>Feature Extraction: Count Vectorizer is utilized to extract features from the text data.</li>
+      <li>Model Implementation: Decision Trees, Random Forest, Support Vector Machines (SVM), and Gradient Boosting Machines (GBM) are implemented to detect cyberbullying data.</li>
+      <li>Performance: Random Forest achieves the highest accuracy of 89%.</li>
+    </ul>
+    <h3>Module 3: Web API Development and Deployment</h3>
+    <ul>
+      <li>Web API Development: A Flask-based Web API is developed to provide an interface for text processing.</li>
+      <li>Model Deployment: The NLP model is containerized using Docker for seamless deployment.</li>
+      <li>Integration: The functionality can be integrated into various social media platforms to aid in combating cyberbullying.</li>
+    </ul>
+  </div>
 
-3. here This application can help in detecting the cyberbullying and can popup the message whenso ever found something offecnsive. As it have been through survey if a person get intimation of offensive message before they are about to text , Its a huge probability that they may revert back the text and can help in relieving the cyberbullying.
+  <div class="section">
+    <h2>User Interface</h2>
+    <div class="image-container">
+      <img src="static/homePage.png" alt="User Interface">
+    </div>
+    <div class="image-container">
+      <img src="static/popup.png" alt="User Interface with Popup">
+    </div>
+  </div>
 
-### Functionality
+  <div class="section">
+    <h2>Additional Functionality: Text Summarization</h2>
+    <p>In addition to offensive text detection, the project includes functionality for text summarization, enhancing its utility for various applications.</p>
+  </div>
 
-### 1. Choice menu
+  <div class="section">
+    <h2>Usage</h2>
+    <p>To utilize the project:</p>
+    <ol>
+      <li>Clone the repository.</li>
+      <li>Install the necessary dependencies.</li>
+      <li>Run the Flask-based Web API.</li>
+      <li>Integrate the functionality into the desired platform or application.</li>
+    </ol>
+  </div>
 
-![1](https://user-images.githubusercontent.com/86300718/218245622-348575cb-9036-4121-ab08-791d465a74e9.png)
+  <div class="section">
+    <h2>Contributors</h2>
+    <p>[Your Name]: Project Lead and Developer</p>
+  </div>
 
-### 2. Summarizer
+  <div class="section">
+    <h2>License</h2>
+    <p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
+  </div>
 
-![2](https://user-images.githubusercontent.com/86300718/218245629-14ebf7b1-cc55-4a63-9ce3-b342ddd5b2c3.png)
-
-### 3. Offensive meter and analyzer
-
-
-![3](https://user-images.githubusercontent.com/86300718/218245638-3e0484f5-a409-45b7-ae76-5fe5664dc557.png)
+  <div class="section">
+    <h2>Acknowledgments</h2>
+    <ul>
+      <li>National Crime Records Bureau (NCRB) for highlighting the issue of cyberbullying.</li>
+      <li>Kaggle for providing datasets for analysis.</li>
+      <li>Libraries and frameworks used in the development of this project.</li>
+    </ul>
+  </div>
+</body>
+</html>
