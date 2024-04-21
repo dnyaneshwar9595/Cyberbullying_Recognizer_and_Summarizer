@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Processing</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Processing</title>
 </head>
 <body>
-    <h1>Text Processing</h1>
-    <form id="textForm">
-        <label for="operation">Select operation:</label>
-        <select id="operation" name="operation">
-            <option value="recognize">Recognize Text</option>
-            <option value="summarize">Summarize Text</option>
-        </select><br>
-        <label for="text">Enter text:</label><br>
-        <textarea id="text" name="text" rows="10" cols="50"></textarea><br>
-        <input type="button" value="Process" onclick="processText()">
-    </form>
-    <div id="resultContainer"></div>
+  <h1>Text Processing</h1>
+  <form id="textForm">
+    <label for="operation">Select operation:</label>
+    <select id="operation" name="operation">
+      <option value="recognize">Recognize Text</option>
+      <option value="summarize">Summarize Text</option>
+    </select><br />
+    <label for="text">Enter text:</label><br />
+    <textarea id="text" name="text" rows="10" cols="50"></textarea><br />
+    <input type="button" value="Process" onclick="processText()" />
+  </form>
+  <div id="resultContainer"></div>
 
-    <script>
-        function processText() {
-            var form = document.getElementById('textForm');
-            var formData = new FormData(form);
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/submit', true);
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    var resultContainer = document.getElementById('resultContainer');
-                    resultContainer.innerHTML = '';
-                    if (response.operation === 'recognize') {
-                        resultContainer.innerHTML = 'Text contains: "' + response.result + '"';
-                    } else if (response.operation === 'summarize') {
-                        resultContainer.innerHTML = 'Summarized text: "' + response.result + '"';
-                    }
-                }
-            };
-            xhr.send(formData);
+  <script>
+    function processText() {
+      var form = document.getElementById("textForm");
+      var formData = new FormData(form);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/submit", true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          var resultContainer = document.getElementById("resultContainer");
+          resultContainer.innerHTML = "";
+          if (response.operation === "recognize") {
+            if (response.result == "Offensive speech") {
+              // Show confirmation dialog
+              var confirmMsg = 'This is offensive text. Still want to send?';
+              var result = confirm(confirmMsg);
+              if (!result) {
+                return; // Don't proceed if user clicks Cancel
+              }
+            }
+            resultContainer.innerHTML =
+              'Text contains: "' + response.result + '"';
+          } else if (response.operation === "summarize") {
+            resultContainer.innerHTML =
+              'Summarized text: "' + response.result + '"';
+          }
         }
-    </script>
+      };
+      xhr.send(formData);
+    }
+  </script>
 </body>
 </html>
